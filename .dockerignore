@@ -1,0 +1,12 @@
+node_modules
+dist
+tests
+coverage
+.git
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+Dockerfile
+.dockerignore
+README.md

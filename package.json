@@ -1,0 +1,33 @@
+{
+  "name": "argos-bff",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/main.js",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "npm run build && node --env-file-if-exists=.env dist/main.js",
+    "start": "node dist/main.js",
+    "check:arch": "depcruise src --config .dependency-cruiser.cjs",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "verify": "npm run check:arch && npm run typecheck && npm test"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.3.0",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.20.5",
+    "@types/swagger-ui-express": "^4.1.8",
+    "dependency-cruiser": "^18.7.2",
+    "typescript": "~6.0.3",
+    "vitest": "^5.1.0"
+  }
+}
